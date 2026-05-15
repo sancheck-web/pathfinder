@@ -1,0 +1,30 @@
+:root{
+  --bg:#f6f7fb; --card:#fff; --text:#1f2937; --muted:#6b7280;
+  --primary:#3b5bdb; --primary-dark:#2540a8; --border:#e5e7eb;
+  --tag-bg:#eef2ff; --tag-text:#3b5bdb; --warn-bg:#fff7ed; --warn-text:#9a3412;
+  --radius:12px; --shadow:0 2px 8px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:960px;margin:0 auto;padding:32px 20px}
+h1{font-size:1.9rem;margin:0 0 8px}
+h2{font-size:1.4rem;margin:24px 0 12px;color:var(--primary-dark)}
+h3{font-size:1.1rem;margin:20px 0 8px;border-left:4px solid var(--primary);padding-left:10px}
+.subtitle{color:var(--muted);margin-bottom:24px}
+.nav-list{list-style:none;padding:0;display:grid;gap:12px}
+.nav-list li a, .grid a.btn{display:block;background:var(--card);padding:16px 18px;border-radius:var(--radius);
+  text-decoration:none;color:var(--text);border:1px solid var(--border);box-shadow:var(--shadow);transition:.15s}
+.nav-list li a:hover, .grid a.btn:hover{transform:translateY(-2px);border-color:var(--primary)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.back{display:inline-block;margin-top:24px;color:var(--primary);text-decoration:none;font-weight:600}
+.back:hover{text-decoration:underline}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:16px;box-shadow:var(--shadow)}
+.card h4{margin:0 0 6px;font-size:1.05rem}
+.card h4 a{color:var(--primary-dark);text-decoration:none}
+.card h4 a:hover{text-decoration:underline}
+.tags{margin:6px 0}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--tag-text);padding:2px 8px;border-radius:999px;font-size:.78rem;margin:2px 4px 2px 0}
+.desc{color:var(--text);margin:6px 0}
+.items{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:.93rem}
+.warn{background:var(--warn-bg);color:var(--warn-text);padding:8px 12px;border-radius:8px;font-size:.88rem;margin-top:8px}
+.category{font-weight:700;color:var(--muted);margin:18px 0 6px;text-transform:uppercase;letter-spacing:.5px;font-size:.85rem}
