@@ -1211,6 +1211,7 @@ function backBtn_main() {
 function backBtn() {
   return `
     <div style="display:flex;gap:10px;margin-top:32px;flex-wrap:wrap;">
+      <a class="back" style="margin-top:0;" href="#home">🏠 메인으로 돌아가기</a>
       <a class="back" style="margin-top:0;" onclick="history.back();return false;" href="#">⬅ 뒤로 가기</a>
     </div>`;
 }
@@ -1287,7 +1288,7 @@ function renderTopic(key) {
     html += `<h2 class="category-title">${g.category}</h2>`;
     g.sites.forEach(s => { html += renderSiteCard(s); });
   });
-  html += backBtn_main() + backBtn();
+  html += backBtn();
   app.innerHTML = html;
 }
 
@@ -1300,7 +1301,7 @@ function renderAct(key) {
     html += `<h2 class="category-title">${g.category}</h2>`;
     g.sites.forEach(s => { html += renderActCard(s); });
   });
-  html += backBtn_main() + backBtn();
+  html += backBtn();
   app.innerHTML = html;
 }
 
@@ -1313,7 +1314,7 @@ function renderStub(key) {
     `<img src="${src}" alt="${r.title}" style="width:100%;height:auto;display:block;margin-bottom:16px;border-radius:var(--radius);box-shadow:var(--shadow);">`
   ).join('');
 
-  app.innerHTML = header(r.title, '', true) + imgHTML + backBtn_main() + backBtn();
+  app.innerHTML = header(r.title, '', true) + imgHTML + backBtn();
 }
 
 /* =============================================================
