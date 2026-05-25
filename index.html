@@ -1201,14 +1201,20 @@ function header(title, sub, withCrumb) {
     </div>`;
 }
 
-function backBtn() {
+function backBtn_main() {
   return `
     <div style="display:flex;gap:10px;margin-top:32px;flex-wrap:wrap;">
-      <a class="back" style="margin-top:0;" onclick="history.back();return false;" href="#">⬅ 뒤로 가기</a>
       <a class="back" style="margin-top:0;" href="#home">🏠 메인으로 돌아가기</a>
     </div>`;
 }
 
+function backBtn() {
+  return `
+    <div style="display:flex;gap:10px;margin-top:32px;flex-wrap:wrap;">
+      <a class="back" style="margin-top:0;" onclick="history.back();return false;" href="#">⬅ 뒤로 가기</a>
+    </div>`;
+}
+  
 /* 외부 링크 있는 카드 */
 function renderSiteCard(s) {
   return `<article class="site-card">
@@ -1268,7 +1274,7 @@ function renderStep(key) {
   } else if (s.html) {
     body += s.html;
   }
-  body += backBtn();
+  body += backBtn_main();
   app.innerHTML = body;
 }
 
@@ -1281,7 +1287,7 @@ function renderTopic(key) {
     html += `<h2 class="category-title">${g.category}</h2>`;
     g.sites.forEach(s => { html += renderSiteCard(s); });
   });
-  html += backBtn();
+  html += backBtn_main() + backBtn();
   app.innerHTML = html;
 }
 
@@ -1294,7 +1300,7 @@ function renderAct(key) {
     html += `<h2 class="category-title">${g.category}</h2>`;
     g.sites.forEach(s => { html += renderActCard(s); });
   });
-  html += backBtn();
+  html += backBtn_main() + backBtn();
   app.innerHTML = html;
 }
 
@@ -1307,7 +1313,7 @@ function renderStub(key) {
     `<img src="${src}" alt="${r.title}" style="width:100%;height:auto;display:block;margin-bottom:16px;border-radius:var(--radius);box-shadow:var(--shadow);">`
   ).join('');
 
-  app.innerHTML = header(r.title, '', true) + imgHTML + backBtn();
+  app.innerHTML = header(r.title, '', true) + imgHTML + backBtn_main() + backBtn();
 }
 
 /* =============================================================
